@@ -35,7 +35,25 @@ routes
 ```
 
 ```html
+
   display: inline-block; 
+```
+
+Ik gebruik gemaakt van de whois API. 
+
+```js
+
+import fetchJson from "$lib/fetch-json"
+
+export async function load() {
+  const url = 'https://fdnd.directus.app/items/person/58'
+  const person = await fetchJson(url)
+
+  return {
+    person: person.data
+  }
+}
+
 ```
 ## week 2
 
@@ -67,12 +85,27 @@ Ik heb er voor gekozen om mijn design erg simpel te houden. Ik wil graag mijn na
 
 ### Code
 
-![alt text](image-5.png)
 ![alt text](image-6.png)
 
-Tijdens 
+Tijdens het bouwen kreeg ik het idee om een aniamtie toe te voegen aan de cirkels. 
 
-
-ReadMe toegevoegd 
+```css
+/* Keyframes for random float movement */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(0.7);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(20vw, -20vh) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-15vw, -100vh) scale(1.4);
+    opacity: 0;
+  }
+}
+```
+Op github heb ik een ReadMe toegevoegd met daarin installatie informatie.  
 
 Leervraag:  Hoe gebruik je JavaScript op sveltekit client side 
